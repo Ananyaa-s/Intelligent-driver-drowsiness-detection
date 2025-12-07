@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Drowsiness Detection Status</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            text-align: center;
+            padding: 50px;
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            transition: background-color 0.5s ease;
+        }
+        h1 {
+            font-size: 32px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        #status {
+            font-size: 60px;
+            margin-top: 40px;
+            padding: 20px 30px;
+            border-radius: 20px;
+            display: inline-block;
+            background: white;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        #startBtn {
+            padding: 15px 30px;
+            font-size: 20px;
+            border-radius: 12px;
+            border: none;
+            background-color: #007BFF;
+            color: white;
+            cursor: pointer;
+            margin-top: 30px;
+        }
+        #startBtn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>🚗Welcome.. </h1>
+
+<h3>Wishing You a happy Journey </h3>
+<h5>please avoid sleeping while driving! Someone is still waiting for you back in the home!</h5>
+    <button id="startBtn" onclick="startMonitoring()">▶️ Start Monitoring</button>
+
+    <div id="status" style="display:none;">Loading...</div>
+
+    <!-- Sound -->
+    <audio id="alert-sound" src="/static/alert.mp3"></audio>
+
+    <script>
+        const statusDiv = document.getElementById('status');
+        const alertSound = document.getElementById('alert-sound');
+        const startBtn = document.getElementById('startBtn');
+        let lastStatus = '';
+
+        function startMonitoring() {
+            startBtn.style.display = 'none';
+            statusDiv.style.display = 'inline-block';
+            fetchStatus();
+            setInterval(fetchStatus, 1000);
+        }
+
+        function fetchStatus() {
+            fetch('/status')
+            .then(response => response.json())
+            .then(data => {
+                const currentStatus = data.status;
+                statusDiv.innerText = currentStatus;
+
+                if (currentStatus === 'Drowsy!' || currentStatus === 'Yawning!' || currentStatus === 'Driver is sleepy' || currentStatus === 'Driver is very drowsy') {
+                    document.body.style.backgroundColor = '#ffcccc';
+                    statusDiv.style.backgroundColor = '#ffe6e6';
+                    statusDiv.style.color = '#d80000';
+
+                    if (lastStatus !== currentStatus) {
+                        alertSound.play().catch(e => console.log("Audio blocked until user interacts"));
+                        if (navigator.vibrate) {
+                            navigator.vibrate([500, 300, 500]);
+                        }
+                    }
+                } else {
+                    document.body.style.backgroundColor = '#ccffcc';
+                    statusDiv.style.backgroundColor = '#e6ffe6';
+                    statusDiv.style.color = '#2e8b57';
+                }
+
+                lastStatus = currentStatus;
+            })
+            .catch(err => console.error('Error fetching status:', err));
+        }
+    </script>
+</body>
+</html>
