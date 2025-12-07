@@ -1,0 +1,9 @@
+# Ignore heavy model and binary files in language stats
+*.dat linguist-vendored
+*.h5 linguist-vendored
+*.mp3 linguist-vendored
+*.png linguist-vendored
+*.jpg linguist-vendored
+
+# Force Python to dominate language stat calculation
+*.py linguist-language=Python
