@@ -32,19 +32,30 @@ Displays real-time detection status, EAR, and yawn measurements on the screen.
 
 🧠 Technology Stack
 Technology-- Purpose
+
 OpenC--Real-time video capture and face tracking
+
 Dlib--68-point facial landmark detection
+
 TensorFlow/Keras--LSTM-based adaptive threshold learning
+
 NumPy	EAR,--lip distance, and numerical calculations
+
 Pygame--Alarm sound playback
+
 Flask--Backend API and minimal web interface
+
 Socket Programming--Client–server communication for alerts
+
 Webcam--Hardware requirement for real-time tracking
 
-<img width="773" height="613" alt="image" src="https://github.com/user-attachments/assets/f0c77dbe-27fd-4a26-9004-09368673362e" />
+<img width="844" height="506" alt="image" src="https://github.com/user-attachments/assets/6faff27c-7fb9-4847-8f29-95602c87b3c4" />
+
 
 ▶️ How to Run the Project
+
 1️⃣ Install dependencies
+
 Create a virtual environment (optional but recommended):
 
 python -m venv venv
@@ -73,11 +84,17 @@ http://127.0.0.1:5000/
 How It Works (Brief Overview)
 
 Face Detection → Haarcascade + Dlib
+
 Facial Landmark Extraction → 68-point model
+
 EAR Calculation → Detects prolonged eye closure
+
 Lip Distance Calculation → Detects yawning
+
 LSTM Prediction → Adaptive thresholding
+
 System Alerts → Sound alarm & optional mobile notification
+
 Logging → Saves data for retraining
 
 👤 Author
