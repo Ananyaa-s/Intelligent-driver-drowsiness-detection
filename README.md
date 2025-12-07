@@ -3,34 +3,45 @@ SnapAwake – Intelligent Driver Drowsiness Detection System
 SnapAwake is an AI-powered real-time driver alertness monitoring system designed to detect drowsiness and fatigue using computer vision and deep learning. By analyzing facial landmarks, eye-closure patterns, lip distance (yawning), and adaptive thresholds generated using an LSTM model, the system helps prevent accidents caused by driver fatigue.
 
 ⭐ Key Features
+
 🔹 Real-Time Monitoring
+
 Continuously tracks the driver’s face using live webcam feed to detect early signs of drowsiness.
 
 🔹 Eye Closure Detection (EAR)
+
 Calculates the Eye Aspect Ratio (EAR) to identify prolonged eye closure, one of the strongest indicators of fatigue.
 
 🔹 Yawn Detection
+
 Measures lip distance to detect yawning patterns that reflect reduced alertness.
 
 🔹 Adaptive Thresholding (LSTM Model)
+
 Uses a trained LSTM-based deep learning model to dynamically adjust EAR and yawn thresholds based on user behavior.
 
 🔹 Audio Alerts
+
 Instantly plays an alarm sound through Pygame when drowsiness symptoms are detected.
 
 🔹 Head Pose Monitoring (if enabled)
+
 Tracks left/right head tilt to identify distraction or micro-sleep.
 
 🔹 Mobile Notification System
+
 Sends real-time status updates to a mobile interface via a Flask backend.
 
 🔹 Data Logging
+
 Saves EAR values, yawn distances, predictions, and timestamps into CSV for model retraining or analysis.
+
 🔹 Visual Feedback
 
 Displays real-time detection status, EAR, and yawn measurements on the screen.
 
 🧠 Technology Stack
+
 Technology-- Purpose
 
 OpenC--Real-time video capture and face tracking
@@ -72,6 +83,7 @@ pip install opencv-python dlib numpy flask pygame tensorflow
 pip install -r requirements.txt
 
 2️⃣ Run the main application
+
 python app.py
 
 Your webcam will start, and the system will begin tracking eye movements, yawning, and thresholds.
