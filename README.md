@@ -1,4 +1,4 @@
-SnapAwake – Intelligent Driver Drowsiness Detection System
+SnapAwake, Intelligent Driver Drowsiness Detection System
 
 SnapAwake is an AI-powered real-time driver alertness monitoring system designed to detect drowsiness and fatigue using computer vision and deep learning. By analyzing facial landmarks, eye-closure patterns, lip distance (yawning), and adaptive thresholds generated using an LSTM model, the system helps prevent accidents caused by driver fatigue.
 
