@@ -1,9 +1,19 @@
-# Ignore heavy model and binary files in language stats
-*.dat linguist-vendored
-*.h5 linguist-vendored
-*.mp3 linguist-vendored
-*.png linguist-vendored
-*.jpg linguist-vendored
+# Ignore ML models
+*.h5 linguist-generated=true
+*.dat linguist-generated=true
 
-# Force Python to dominate language stat calculation
+# Ignore OpenCV / Haar cascade files
+*.xml linguist-generated=true
+
+# Ignore data files
+*.csv linguist-generated=true
+
+# Ignore images
+*.png linguist-generated=true
+*.jpg linguist-generated=true
+
+# Ignore audio
+*.mp3 linguist-generated=true
+
+# Mark Python as main language
 *.py linguist-language=Python
