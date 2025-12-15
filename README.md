@@ -112,4 +112,4 @@ System Alerts → Sound alarm & optional mobile notification
 Logging → Saves data for retraining
 
 👤 Author
-Ananyaa S
+Ananya S
