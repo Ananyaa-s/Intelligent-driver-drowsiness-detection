@@ -1,19 +1,18 @@
-# Ignore ML models
+# ---------- Ignore non-source files ----------
 *.h5 linguist-generated=true
 *.dat linguist-generated=true
-
-# Ignore OpenCV / Haar cascade files
 *.xml linguist-generated=true
-
-# Ignore data files
 *.csv linguist-generated=true
-
-# Ignore images
 *.png linguist-generated=true
 *.jpg linguist-generated=true
-
-# Ignore audio
+*.jpeg linguist-generated=true
 *.mp3 linguist-generated=true
 
-# Mark Python as main language
+# ---------- Ignore build / tool files ----------
+CMakeLists.txt linguist-generated=true
+*.cmake linguist-generated=true
+
+# ---------- Force main language ----------
 *.py linguist-language=Python
+*.html linguist-language=HTML
+*.js linguist-language=JavaScript
