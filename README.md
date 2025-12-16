@@ -1,115 +1,63 @@
-SnapAwake, Intelligent Driver Drowsiness Detection System
+# 🚗 SnapAwake – Intelligent Driver Drowsiness Detection System
 
-Tech Stack: Python, OpenCV, Dlib, TensorFlow, Flask
+**Tech Stack:** Python, OpenCV, Dlib, TensorFlow, Flask  
 
-SnapAwake is an AI-powered real-time driver alertness monitoring system designed to detect drowsiness and fatigue using computer vision and deep learning. By analyzing facial landmarks, eye-closure patterns, lip distance (yawning), and adaptive thresholds generated using an LSTM model, the system helps prevent accidents caused by driver fatigue.
+SnapAwake is an AI-powered real-time driver alertness monitoring system designed to detect drowsiness and fatigue using computer vision and deep learning.
 
- Key Features
+---
 
-🔹 Real-Time Monitoring
+## ✨ Key Features
 
-Continuously tracks the driver’s face using live webcam feed to detect early signs of drowsiness.
+### 🔹 Real-Time Monitoring
+Continuously tracks the driver’s face using a live webcam feed.
 
-🔹 Eye Closure Detection (EAR)
+### 🔹 Eye Closure Detection (EAR)
+Detects prolonged eye closure using Eye Aspect Ratio.
 
-Calculates the Eye Aspect Ratio (EAR) to identify prolonged eye closure, one of the strongest indicators of fatigue.
+### 🔹 Yawn Detection
+Detects yawning using lip distance.
 
-🔹 Yawn Detection
+### 🔹 Adaptive Thresholding (LSTM)
+Uses an LSTM model to adjust thresholds dynamically.
 
-Measures lip distance to detect yawning patterns that reflect reduced alertness.
+### 🔹 Audio Alerts
+Plays an alarm when drowsiness is detected.
 
-🔹 Adaptive Thresholding (LSTM Model)
+---
 
-Uses a trained LSTM-based deep learning model to dynamically adjust EAR and yawn thresholds based on user behavior.
+## ▶️ How to Run the Project
 
-🔹 Audio Alerts
+### 1️⃣ Install Dependencies
 
-Instantly plays an alarm sound through Pygame when drowsiness symptoms are detected.
-
-🔹 Head Pose Monitoring (if enabled)
-
-Tracks left/right head tilt to identify distraction or micro-sleep.
-
-🔹 Mobile Notification System
-
-Sends real-time status updates to a mobile interface via a Flask backend.
-
-🔹 Data Logging
-
-Saves EAR values, yawn distances, predictions, and timestamps into CSV for model retraining or analysis.
-
-🔹 Visual Feedback
-
-Displays real-time detection status, EAR, and yawn measurements on the screen.
-
-🧠 Technology Stack
-
-Technology-- Purpose
-
-OpenC--Real-time video capture and face tracking
-
-Dlib--68-point facial landmark detection
-
-TensorFlow/Keras--LSTM-based adaptive threshold learning
-
-NumPy	EAR,--lip distance, and numerical calculations
-
-Pygame--Alarm sound playback
-
-Flask--Backend API and minimal web interface
-
-Socket Programming--Client–server communication for alerts
-
-Webcam--Hardware requirement for real-time tracking
-
-<img width="844" height="506" alt="image" src="https://github.com/user-attachments/assets/6faff27c-7fb9-4847-8f29-95602c87b3c4" />
-
-
-▶️ How to Run the Project
-
-1️⃣ Install dependencies
-
-Create a virtual environment (optional but recommended):
-
+```bash
 python -m venv venv
+```
 
-venv\Scripts\activate   # Windows
+```powershell
+venv\Scripts\activate
+```
 
- Install required libraries:
-
+```bash
 pip install opencv-python dlib numpy flask pygame tensorflow
+```
 
+---
 
-(If you have a requirements.txt, use:)
+### 2️⃣ Run the Application
 
-pip install -r requirements.txt
-
-2️⃣ Run the main application
-
+```bash
 python app.py
+```
 
-Your webcam will start, and the system will begin tracking eye movements, yawning, and thresholds.
+---
 
-3️⃣ Flask Web Interface
-Navigate to:
+### 3️⃣ Open Web Interface
 
+```
 http://127.0.0.1:5000/
+```
 
-How It Works (Brief Overview)
+---
 
-Face Detection → Haarcascade + Dlib
-
-Facial Landmark Extraction → 68-point model
-
-EAR Calculation → Detects prolonged eye closure
-
-Lip Distance Calculation → Detects yawning
-
-LSTM Prediction → Adaptive thresholding
-
-System Alerts → Sound alarm & optional mobile notification
-
-Logging → Saves data for retraining
-
-👤 Author
-Ananya S
+## 👤 Author
+**Ananya S**
