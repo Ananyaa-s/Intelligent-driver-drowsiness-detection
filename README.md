@@ -1,4 +1,4 @@
-# 🚗 SnapAwake – Intelligent Driver Drowsiness Detection System
+# 🚗 SnapAwake: Intelligent Driver Drowsiness Detection System
 
 **Tech Stack:** Python, OpenCV, Dlib, TensorFlow, Flask  
 
@@ -60,4 +60,4 @@ http://127.0.0.1:5000/
 ---
 
 ## 👤 Author
-**Ananya S**
+**Developed with ❤️ by Ananya S 🚀**
